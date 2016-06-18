@@ -1,18 +1,18 @@
 {
   "name": "we-plugin-editor-tinymce",
   "description": "We.js plugin for add tinymce html field with editor in project",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "plugin.js",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:wejs/we-plugin-editor-tinymce.git"
-  },
+  "repository": "wejs/we-plugin-editor-tinymce",
   "keywords": [
-    "we.js",
-    "wejs",
-    "plugin",
-    "editor"
+    "wejs-plugin"
   ],
   "author": "Alberto Souza <contato@albertosouza.net>",
-  "license": "MIT"
+  "license": "MIT",
+  "wejs": {
+    "dependencies": {
+      "we-plugin-view": true,
+      "we-plugin-form": true
+    }
+  }
 }

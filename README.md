@@ -1,6 +1,6 @@
 # we-plugin-editor-tinymce
 
-> Add the html form field and tinymce features to client site
+Add the html form field and tinymce features to client site
 
 Incompatible with others npm modules starting with: we-plugin-editor-* plugins
 
@@ -9,7 +9,7 @@ Incompatible with others npm modules starting with: we-plugin-editor-* plugins
 In project folder tip:
 
 ```sh
-npm install we-plugin-editor-tinymce --save
+we i we-plugin-editor-tinymce
 ```
 
 ## Links
@@ -18,4 +18,4 @@ npm install we-plugin-editor-tinymce --save
 
 ## license
 
-under [the MIT license](LICENSE).
+MIT
