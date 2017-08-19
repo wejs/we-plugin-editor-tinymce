@@ -12,5 +12,14 @@ module.exports = function loadPlugin(projectPath, Plugin) {
     }
   });
 
+  plugin.addJs('we-plugin-editor-tinymce', {
+    weight: 11, pluginName: 'we-plugin-editor-tinymce',
+    path: 'files/public/we-plugin-editor-tinymce.js'
+  });
+
   return plugin;
 };
+
+
+// files/public/we-plugin-editor-tinymce.js
+// http://localhost:8190/public/plugin/we-plugin-editor-tinymce/files/we-plugin-editor-tinymce.js?v=1.0.0
