@@ -4,9 +4,11 @@ window.we.components.editor = {
     medium: 'undo redo | insert | styleselect | bold italic forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media'
   },
   init: function(selector, style) {
+    window.tinymce.remove();
+
     var element = $(selector);
     var cfg = {
-      selector: selector,
+      target: element[0],
       lang: window.WE_BOOTSTRAP_CONFIG.locale,
 
       focus: element.attr('we-editor-focus'),
