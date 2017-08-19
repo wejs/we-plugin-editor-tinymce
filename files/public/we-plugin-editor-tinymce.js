@@ -22,7 +22,13 @@ window.we.components.editor = {
         'emoticons template paste textcolor colorpicker textpattern imagetools codesample'
       ],
       language: this.getEditorLocale(),
-      language_url: this.getEditorLocaleUrl()
+      language_url: this.getEditorLocaleUrl(),
+      // settup the tiny editor to update on change:
+      setup: function (editor) {
+        editor.on('change', function () {
+          editor.save();
+        });
+      }
     };
 
     // - set we-editor flag to use in form submit
