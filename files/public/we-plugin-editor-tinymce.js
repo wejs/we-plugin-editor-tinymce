@@ -11,8 +11,6 @@ window.we.components.editor = {
       target: element[0],
       lang: window.WE_BOOTSTRAP_CONFIG.locale,
 
-      focus: element.attr('we-editor-focus'),
-
       min_height: element.attr('we-editor-height') || 400,
       theme: 'modern',
       plugins: [
@@ -30,6 +28,11 @@ window.we.components.editor = {
         });
       }
     };
+
+    // support for focus:
+    if (element.attr('id') && element.attr('we-editor-focus')) {
+      cfg.auto_focus = element.attr('id');
+    }
 
     // - set we-editor flag to use in form submit
     element.attr('we-editor', 'true');
