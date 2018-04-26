@@ -10,7 +10,6 @@ window.we.components.editor = {
     var cfg = {
       target: element[0],
       lang: window.WE_BOOTSTRAP_CONFIG.locale,
-      theme: 'modern',
       convert_urls: false,
       branding: false,
 
