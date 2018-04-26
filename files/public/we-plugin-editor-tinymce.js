@@ -10,15 +10,24 @@ window.we.components.editor = {
     var cfg = {
       target: element[0],
       lang: window.WE_BOOTSTRAP_CONFIG.locale,
+      theme: 'modern',
+      convert_urls: false,
+      branding: false,
 
       min_height: element.attr('we-editor-height') || 400,
       theme: 'modern',
+      extended_valid_elements: 'iframe[src|frameborder|style|scrolling|class|width|height|name|align]',
       plugins: [
-        'advlist autolink lists link image charmap print preview hr anchor pagebreak',
-        'searchreplace wordcount visualblocks visualchars code fullscreen',
+        'advlist autolink lists link image charmap print hr anchor',
+        'searchreplace visualblocks visualchars code fullscreen',
         'insertdatetime media nonbreaking save table contextmenu directionality',
-        'emoticons template paste textcolor colorpicker textpattern imagetools codesample'
+        'emoticons paste textcolor colorpicker textpattern codesample'
       ],
+      toolbar1: 'undo redo | insert | '+
+        'styleselect | '+
+        'bold italic forecolor backcolor | '+
+        'alignleft aligncenter alignright alignjustify | '+
+        'bullist numlist outdent indent | link image media | fullscreen',
       language: this.getEditorLocale(),
       language_url: this.getEditorLocaleUrl(),
       // settup the tiny editor to update on change:
@@ -26,7 +35,10 @@ window.we.components.editor = {
         editor.on('change', function () {
           editor.save();
         });
-      }
+      },
+
+      // file_browser_callback_types: 'image',
+      // file_picker_callback: this.get('upload').get_file_picker_callback()
     };
 
     // support for focus:
