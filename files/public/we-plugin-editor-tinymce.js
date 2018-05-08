@@ -12,6 +12,7 @@ window.we.components.editor = {
       lang: window.WE_BOOTSTRAP_CONFIG.locale,
       convert_urls: false,
       branding: false,
+      paste_as_text: true,
 
       min_height: element.attr('we-editor-height') || 400,
       theme: 'modern',
