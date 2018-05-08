@@ -1,7 +1,7 @@
 {
   "name": "we-plugin-editor-tinymce",
   "description": "We.js plugin for add tinymce html field with editor in project",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "main": "plugin.js",
   "repository": "wejs/we-plugin-editor-tinymce",
   "keywords": [
