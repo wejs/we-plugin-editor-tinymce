@@ -8,13 +8,14 @@ window.we.components.editor = {
 
     var element = $(selector);
     var cfg = {
+      menubar: true,
       target: element[0],
       lang: window.WE_BOOTSTRAP_CONFIG.locale,
       convert_urls: false,
       branding: false,
       paste_as_text: true,
 
-      min_height: element.attr('we-editor-height') || 400,
+      min_height: element.attr('we-editor-height') || 350,
       theme: 'modern',
       extended_valid_elements: 'iframe[src|frameborder|style|scrolling|class|width|height|name|align]',
       plugins: [
@@ -23,7 +24,7 @@ window.we.components.editor = {
         'insertdatetime media nonbreaking save table contextmenu directionality',
         'emoticons paste textcolor colorpicker textpattern codesample'
       ],
-      toolbar1: 'undo redo | insert | '+
+      toolbar: 'undo redo | insert paste | '+
         'styleselect | '+
         'bold italic forecolor backcolor | '+
         'alignleft aligncenter alignright alignjustify | '+
@@ -55,6 +56,7 @@ window.we.components.editor = {
     cfg.toolbar = window.we.components.editor.styles[style];
 
     setTimeout(function() {
+      console.log('cfg', cfg);
       window.tinymce.init(cfg);
     }, 200);
   },
@@ -67,7 +69,8 @@ window.we.components.editor = {
       return this.editorLocaleCache;
     }
 
-    var locale = window.we.config.locale;
+    var locale = window.WE_BOOTSTRAP_CONFIG.locale;
+
     // use default en-us locale
     if (!locale || locale === 'en' || locale === 'en-us') {
       return null;
@@ -98,6 +101,8 @@ window.we.components.editor = {
     }
 
     var locale = this.getEditorLocale();
+
+    if (!locale) return null;
 
     this.editorLocaleUrlCache = '/public/plugin/we-plugin-editor-tinymce/files/langs/'+locale+'.js';
 

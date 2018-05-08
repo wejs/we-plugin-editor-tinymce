@@ -8,10 +8,5 @@
 </div>
 
 <script>$(document).ready(function() {
-  tinymce.init({
-    menubar: false,
-    selector:'#{{fieldId}}',
-    height: '{{field.formFieldHeight}}',
-    max_height: '{{field.formFieldMaxHeight}}'
-  });
+  window.we.components.editor.init('#{{fieldId}}');
 });</script>
